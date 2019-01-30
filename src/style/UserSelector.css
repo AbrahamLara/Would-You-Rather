@@ -1,0 +1,39 @@
+.custom-select {
+  position: relative;
+  border: 1px solid gray;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.custom-select-display {
+  color: gray;
+  cursor: pointer;
+  width: 100%;
+  text-align: start;
+  padding: 10px;
+}
+
+.custom-options-group {
+  padding-top: 10px;
+}
+
+.custom-option {
+  display: flex;
+  align-items: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+}
+
+.custom-option:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.text-black {
+  color: black;
+}

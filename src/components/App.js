@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './../App.css';
+import './../style/App.css';
+import Selector from './UserSelector';
 
 class App extends Component {
   render() {
@@ -18,11 +19,15 @@ class App extends Component {
             </li>
           </ul>
           <ul className="menu sub-menu">
-            <li className="menu-item">
-              <button className="btn">Login</button>
+            <li className="menu-item no-rm">
+              <button className="btn bg-light-blue">Login</button>
             </li>
           </ul>
         </nav>
+        <div className="login-window">
+          <div className="title">Login window</div>
+          <Selector />
+        </div>
       </div>
     );
   }
