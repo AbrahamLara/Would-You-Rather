@@ -1,6 +1,6 @@
 export const RECEVE_QUESTIONS = 'RECEVE_QUESTIONS';
 export const SAVE_QUESTION = 'SAVE_QUESTION';
-export const UPDATE_OPTION_VOTES = 'UPDATE_OPTION_VOTES';
+export const SAVE_ANSWER = 'SAVE_ANSWER';
 
 export function receiveQuestions (questions) {
 	return {
@@ -16,9 +16,9 @@ export function saveQuestion (question) {
 	}
 }
 
-export function saveQuestionAnswer (question) {
+export function saveAnswer (question) {
 	return {
-		type: UPDATE_OPTION_VOTES,
+		type: SAVE_ANSWER,
 		question,
 	}
 }
