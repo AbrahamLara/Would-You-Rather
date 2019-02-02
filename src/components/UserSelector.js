@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './../style/UserSelector.css'
+import './../style/UserSelector.css';
 
 export class Selector extends Component {
 	state = {

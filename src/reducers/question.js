@@ -1,4 +1,3 @@
-
 import { RECEIVE_QUESTIONS, ADD_QUESTION, ADD_ANSWER } from "../actions/questions";
 
 export function questions(state = {}, action) {
