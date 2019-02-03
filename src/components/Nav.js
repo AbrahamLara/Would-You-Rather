@@ -17,7 +17,7 @@ export default function Nav () {
 				</li>
 				<li className="menu-item">
 					<NavLink to='/leaderboard' activeClassName='active' className='menu-link'>
-						Home
+						Leaderboard
 					</NavLink>
 				</li>
 			</ul>

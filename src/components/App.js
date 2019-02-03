@@ -6,8 +6,14 @@ import { LoadingBar } from 'react-redux-loading';
 import LoginWindow from './LoginWindow';
 import NewQuestion from './NewQuestion';
 import Leaderboard from './Leaderboard';
+import { connect } from 'react-redux';
+import { handleInitialData } from '../actions/shared';
 
 class App extends Component {
+  componentDidMount () {
+    this.props.dispatch(handleInitialData());
+  }
+
   render() {
     return (
       <Router>
@@ -30,4 +36,10 @@ class App extends Component {
   }
 }
 
-export default App;
+function mapStateToProps ({ authedUser }) {
+  return {
+    loading: authedUser === null,
+  }
+}
+
+export default connect(mapStateToProps)(App);

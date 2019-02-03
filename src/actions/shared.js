@@ -4,17 +4,15 @@ import { receiveUsers } from "./users";
 import { setAuthedUser } from "./authedUser";
 import { showLoading, hideLoading } from "react-redux-loading";
 
-const AUTHED_ID = undefined;
-
-export function handleInitialData () {
-    return (dispatch) => {
-        dispatch(showLoading());
-        return getInitialData()
-            .then(({ users, questions }) => {
-                dispatch(receiveUsers(users));
-                dispatch(receiveQuestions(questions));
-                dispatch(setAuthedUser(AUTHED_ID));
-                dispatch(hideLoading());
-            });
-    }
+export function handleInitialData (userid = 'none') {
+	return (dispatch) => {
+		dispatch(showLoading());
+		return getInitialData()
+			.then(({ users, questions }) => {
+				dispatch(receiveUsers(users));
+				dispatch(receiveQuestions(questions));
+				dispatch(setAuthedUser(userid));
+				dispatch(hideLoading());
+			});
+	}
 }

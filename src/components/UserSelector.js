@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './../style/UserSelector.css';
+import { connect } from 'react-redux';
 
-export class Selector extends Component {
+class Selector extends Component {
 	state = {
 		toggled: false,
 	}
@@ -21,6 +22,7 @@ export class Selector extends Component {
 
 	render () {
 		const { toggled, value } = this.state;
+		const { users } = this.props;
 
 		return (
 			<div className="custom-select">
@@ -31,34 +33,27 @@ export class Selector extends Component {
 					{value || 'Select a user'}
 				</button>
 				<div className={"custom-options-group"+(toggled || ' hidden')}>
-					<div className="custom-option" onClick={() => this.handleClick('sarahedo')}>
-						<img
-							className="user-image"
-							alt="profile-pic"
-							src="https://randomuser.me/api/portraits/women/18.jpg"
-						/>
-						<span className="user-name">Sarah Edo</span>
-					</div>
-					<div className="custom-option" onClick={() => this.handleClick('tylermcginnis')}>
-						<img
-							className="user-image"
-							alt="profile-pic"
-							src="https://randomuser.me/api/portraits/men/36.jpg"
-						/>
-						<span className="user-name">Tyler McGinnis</span>
-					</div>
-					<div className="custom-option" onClick={() => this.handleClick('johndoe')}>
-						<img
-							className="user-image"
-							alt="profile-pic"
-							src="https://randomuser.me/api/portraits/men/89.jpg"
-						/>
-						<span className="user-name">John Doe</span>
-					</div>
+					{Object.keys(users).map((k, i) => (
+						<div key={k+i} className="custom-option" onClick={() => this.handleClick(users[k].name)}>
+							<img
+								className="user-image"
+								alt="profile-pic"
+								src={users[k].avatarURL}
+							/>
+							<span className="user-name">{users[k].name}</span>
+						</div>
+					))}
 				</div>
 			</div>
 		);
 	}
 }
 
-export default Selector;
+function mapStateToProps ({ authedUser, users }) {
+	return {
+		authedUser,
+		users,
+	}
+}
+
+export default connect(mapStateToProps)(Selector);
