@@ -18,9 +18,19 @@ function addQuestion (question) {
 	}
 }
 
-function addAnswer (question) {
+export function handleAddQuestion (question) {
+	
+}
+
+function addAnswer ({ authedUser, qid, answer}) {
 	return {
 		type: ADD_ANSWER,
-		question,
+		authedUser,
+		qid,
+		answer,
 	}
+}
+
+export function handleAddAnswer({ authedUser, quid, answer }) {
+
 }
