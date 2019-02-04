@@ -15,18 +15,19 @@ class App extends Component {
   }
 
   render() {
+    const { loading, authedUser } = this.props;
     return (
       <Router>
         <Fragment>
           <LoadingBar />
           <div className="App">
             <Nav />
-            {this.props.loading === true ?
+            {loading === true ?
               null
               : <div>
-                  <Route path='/' exact component={LoginWindow}/>
-                  <Route path='/add' component={NewQuestion}/>
-                  <Route path='/leaderboard' component={Leaderboard}/>
+                  <Route path='/' exact component={authedUser ===  'none' ? LoginWindow : null}/>
+                  <Route path='/add' component={authedUser ===  'none' ? LoginWindow : NewQuestion}/>
+                  <Route path='/leaderboard' component={authedUser ===  'none' ? LoginWindow : Leaderboard}/>
                 </div>
             }
           </div>
@@ -38,6 +39,7 @@ class App extends Component {
 
 function mapStateToProps ({ authedUser }) {
   return {
+    authedUser,
     loading: authedUser === null,
   }
 }

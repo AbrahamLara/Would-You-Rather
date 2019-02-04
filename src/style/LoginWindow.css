@@ -1,0 +1,41 @@
+.login-window {
+	width: calc(30% - 3em);
+	margin: auto;
+}
+
+.title {
+	width: fit-content;
+	margin:  auto;
+	font-size: 1.5em;
+}
+
+.user-image {
+	width: 60px;
+	border-radius: 30px;
+}
+
+.user-name {
+	font-size: 1.2em;
+	margin-left: 10px;
+}
+
+.btn-login {
+	cursor: pointer;
+	outline: none;
+	margin-top: 1em;
+	padding: 10px;
+	width: 100%;
+	border: 1px solid #09f;
+	color: #09f;
+}
+
+.btn-login:hover {
+	background-color: #09f;
+	color: white;
+}
+
+@media (max-width: 550px) {
+	.login-window {
+		width: 100%;
+	}
+}
