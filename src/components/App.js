@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import './../style/App.css';
 import Nav from './Nav';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { LoadingBar } from 'react-redux-loading';
+import LoadingBar from 'react-redux-loading';
 import LoginWindow from './LoginWindow';
 import NewQuestion from './NewQuestion';
 import Leaderboard from './Leaderboard';

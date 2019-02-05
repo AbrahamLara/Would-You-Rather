@@ -4,6 +4,8 @@
   padding: 0;
   margin: 0;
   font-size: 1em;
+  cursor: pointer;
+  outline: none;
 }
 
 .bg-light-blue {
