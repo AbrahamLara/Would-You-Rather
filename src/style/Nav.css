@@ -39,6 +39,18 @@ nav {
 	text-decoration: underline;
 }
 
+.btn-logout {
+	color: #1af !important;
+}
+
+.btn-logout:hover {
+	color: #05f !important;
+}
+
+.separator {
+	margin: 0.5em;
+}
+
 @media (max-width: 550px) {
 	.menu {
 		padding-left: 1em;

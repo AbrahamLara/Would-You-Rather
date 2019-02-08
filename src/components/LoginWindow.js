@@ -13,8 +13,8 @@ class LoginWindow extends Component {
 
 	authUser = () => {
 		const { id } = this.state;
-		if (id) this.props.dispatch(setAuthedUser(id));
-		else console.log('Select a user.')
+		if (id)
+			this.props.dispatch(setAuthedUser(id));
 	}
 
 	render () {
