@@ -1,4 +1,85 @@
 table {
-	border: 1px solid black;
 	margin: auto;
+	border-spacing: 0;
+	border: 1px solid #aaa;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+th {
+	width: 50%;
+	padding: 10px;
+	cursor: pointer;
+}
+
+.left-border {
+	border-left: 1px solid #aaa;
+}
+
+.hidden {
+	display: none;
+}
+
+.selected {
+	cursor: default;
+	background-color: #ddd;
+}
+
+td {
+	padding: 10px;
+}
+
+.card-info {
+	display: grid;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	grid-template-columns: 33.9% 33% 33%;
+	grid-template-rows: 33.9% 33% 33%;
+}
+
+.header {
+
+}
+
+.profile-image-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: row;
+	grid-column-start: 1;
+	grid-row-start: 1;
+	grid-row-end: 4;
+}
+
+.profile-image {
+	width: 70%;
+}
+
+strong {
+	grid-column-start: 2;
+	grid-column-end: 4;
+	grid-row-start: 1;
+}
+
+span {
+	grid-column-start: 2;
+	grid-column-end: 4;
+	grid-row-start: 2;
+}
+
+.btn-view-poll {
+	border: 1px solid #09f;
+	color: #09f;
+	border-radius: 5px;
+}
+
+.btn-view-poll:hover {
+	background-color: #09f;
+	color: white;
+}
+
+button {
+	grid-column-start: 2;
+	grid-column-end: 4;
+	grid-row-start: 3;
 }

@@ -11,8 +11,7 @@ class Nav extends Component {
 
 	render () {
 		const { authedUser, users } = this.props
-		console.log(authedUser);
-		console.log(users);
+		
 		return (
 			<nav>
 				<ul className='menu'>

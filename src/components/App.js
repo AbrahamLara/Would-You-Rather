@@ -25,7 +25,7 @@ class App extends Component {
             <Nav />
             {loading === true ?
               null
-              : <div>
+              : <div className='container'>
                   <Route path='/' exact component={authedUser ===  '' ? LoginWindow : ViewQuestions}/>
                   <Route path='/add' component={authedUser ===  '' ? LoginWindow : NewQuestion}/>
                   <Route path='/leaderboard' component={authedUser ===  '' ? LoginWindow : Leaderboard}/>
