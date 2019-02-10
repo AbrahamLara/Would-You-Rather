@@ -2,10 +2,10 @@
   position: relative;
   border: 1px solid gray;
   border-radius: 5px;
-  overflow: hidden;
 }
 
 .custom-select-display {
+  border-radius: 5px;
   color: gray;
   cursor: pointer;
   width: 100%;
@@ -15,7 +15,13 @@
 }
 
 .custom-options-group {
-  padding-top: 10px;
+  position: absolute;
+  top: 45px;
+  left: -1px;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid gray;
+  width: 100%;
 }
 
 .custom-option {

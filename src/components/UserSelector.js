@@ -34,7 +34,7 @@ class Selector extends Component {
 				>
 					{value || 'Select a user'}
 				</button>
-				<div className={"custom-options-group"+(toggled || ' hidden')}>
+				<div className={"custom-options-group"+(toggled ? '' : ' hidden')}>
 					{Object.keys(users).map((k, i) => (
 						<div key={k+i} className="custom-option" onClick={() => this.handleClick(users[k].name, k)}>
 							<img
