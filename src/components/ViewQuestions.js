@@ -1,38 +1,44 @@
 import React, { Component } from 'react';
 import '../style/ViewQuestions.css';
-import logo from '../logo.svg';
+import { connect } from 'react-redux';
+import Question from './Question';
 
 class ViewQuestions extends Component {
+	state = {
+		view: 'unanswered',
+	}
+
+	changeViewTo = (view) => {
+		this.setState({
+			view: view
+		});
+	}
+
 	render () {
+		const {  answered, unanswered } = this.props;
+		const selected = this.state.view === 'unanswered';
+		const 	questions = selected ? unanswered  : answered;
 		return (
 			<div className="ViewQuestions">
 				<table>
 					<thead className='header-container'>
 						<tr>
-							<th className='selected'>
+							<th
+								className={selected ? 'selected' : ''}
+								onClick={() => this.changeViewTo('unanswered')}
+							>
 								Unanswered Questions
 							</th>
-							<th className='left-border'>
+							<th
+								className={'left-border'+(selected ? '' : ' selected')}
+								onClick={() => this.changeViewTo('answered')}
+							>
 								Answered Questions
 							</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td className='QuestionCard' colSpan='2'>
-								<div className='header'>
-									User asks:
-								</div>
-								<div className='card-info'>
-									<div className='profile-image-container'>
-										<img className='profile-image' src={logo} />
-									</div>
-									<strong>Would you rather</strong>
-									<span>...a...</span>
-									<button className='btn btn-view-poll'>View Poll</button>
-								</div>
-							</td>
-						</tr>
+						{questions.map((question) => (<Question key={question.id} question={question}/>))}
 					</tbody>
 				</table>
 			</div>
@@ -40,4 +46,12 @@ class ViewQuestions extends Component {
 	}
 }
 
-export default ViewQuestions;
+function mapStateToProps ({ authedUser, questions, users }) {
+	const qs = Object.keys(questions).map((k,i) => questions[k]);
+	return {
+		answered: qs.filter((q) => q.id in users[authedUser].answers),
+		unanswered: qs.filter((q) => !(q.id in users[authedUser].answers)),
+	}
+}
+
+export default connect(mapStateToProps)(ViewQuestions);

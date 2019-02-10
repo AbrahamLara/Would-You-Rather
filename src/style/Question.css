@@ -1,0 +1,59 @@
+td {
+	padding: 10px;
+}
+
+.card-info {
+	display: grid;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	grid-template-columns: 33.9% 33% 33%;
+	grid-template-rows: 33.9% 33% 33%;
+}
+
+.profile-image-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: row;
+	grid-column-start: 1;
+	grid-row-start: 1;
+	grid-row-end: 4;
+}
+
+.profile-image {
+	width: 70%;
+}
+
+strong {
+	grid-column-start: 2;
+	grid-column-end: 4;
+	grid-row-start: 1;
+}
+
+.rm-mg {
+	margin: unset;
+}
+
+.short-text {
+	text-overflow: ellipsis;
+	max-width: 124px;
+	overflow: hidden;
+	white-space: nowrap;
+	grid-column-start: 2;
+	grid-column-end: 4;
+	grid-row-start: 2;
+}
+
+.btn-view-poll {
+	border: 1px solid #09f;
+	color: #09f;
+	border-radius: 5px;
+	grid-column-start: 2;
+	grid-column-end: 4;
+	grid-row-start: 3;
+}
+
+.btn-view-poll:hover {
+	background-color: #09f;
+	color: white;
+}

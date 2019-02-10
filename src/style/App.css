@@ -2,6 +2,10 @@
   margin-top: 1em;
 }
 
+.rm-mg {
+  margin: unset;
+}
+
 .btn {
   background-color: white;
   border: 0;
