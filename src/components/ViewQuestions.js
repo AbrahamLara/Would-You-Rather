@@ -9,15 +9,18 @@ class ViewQuestions extends Component {
 	}
 
 	changeViewTo = (view) => {
-		this.setState({
-			view: view
-		});
+		if (view !== this.state.view){
+			this.setState({
+				view: view
+			});
+		}
 	}
 
 	render () {
 		const {  answered, unanswered } = this.props;
 		const selected = this.state.view === 'unanswered';
-		const 	questions = selected ? unanswered  : answered;
+		const questions = selected ? unanswered  : answered;
+
 		return (
 			<div className="ViewQuestions">
 				<table>
