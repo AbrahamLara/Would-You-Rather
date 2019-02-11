@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Leaderboard extends Component {
+class LeaderBoard extends Component {
 	render () {
 		return (
 			<div>
@@ -10,4 +10,4 @@ class Leaderboard extends Component {
 	}
 }
 
-export default Leaderboard;
+export default LeaderBoard;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../style/ViewQuestions.css';
 import { connect } from 'react-redux';
-import Question from './Question';
+import QuestionCard from './QuestionCard';
 
 class ViewQuestions extends Component {
 	state = {
@@ -19,7 +19,7 @@ class ViewQuestions extends Component {
 	render () {
 		const {  answered, unanswered } = this.props;
 		const selected = this.state.view === 'unanswered';
-		const questions = selected ? unanswered  : answered;
+		const ids = selected ? unanswered  : answered;
 
 		return (
 			<div className="ViewQuestions">
@@ -41,7 +41,7 @@ class ViewQuestions extends Component {
 						</tr>
 					</thead>
 					<tbody>
-						{questions.map((question) => (<Question key={question.id} question={question}/>))}
+						{ids.map((id) => (<QuestionCard key={id} id={id}/>))}
 					</tbody>
 				</table>
 			</div>
@@ -50,10 +50,10 @@ class ViewQuestions extends Component {
 }
 
 function mapStateToProps ({ authedUser, questions, users }) {
-	const qs = Object.keys(questions).map((k,i) => questions[k]);
+	const ids = Object.keys(questions);
 	return {
-		answered: qs.filter((q) => q.id in users[authedUser].answers),
-		unanswered: qs.filter((q) => !(q.id in users[authedUser].answers)),
+		answered: ids.filter((id) => id in users[authedUser].answers),
+		unanswered: ids.filter((id) => !(id in users[authedUser].answers)),
 	}
 }
 

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
+import { connect } from 'react-redux';
 import '../style/Question.css';
+import { formatQuestionCard } from '../utils/helpers';
 
-class UnQuestion extends Component {
+class QuestionCard extends Component {
 	render() {
-		const { author, optionOne } = this.props.question;
+		const { id, author, optionOne, avatarURL } = this.props.question;
 		return (
 			<tr>
 				<td className='QuestionCard' colSpan='2'>
@@ -13,7 +14,7 @@ class UnQuestion extends Component {
 					</div>
 					<div className='card-info'>
 						<div className='profile-image-container'>
-							<img className='profile-image' src={logo} />
+							<img className='profile-image' src={avatarURL} />
 						</div>
 						<strong>Would you rather</strong>
 						<div className='short-text'>{optionOne.text}</div>
@@ -24,5 +25,13 @@ class UnQuestion extends Component {
 		);
 	}
 }
+
+function mapStateToProps ({ questions, users }, { id }) {
+	const question = questions[id];
+
+	return {
+		question: formatQuestionCard(question, users[question.author]),
+	}
+}
  
-export default UnQuestion;
+export default connect(mapStateToProps)(QuestionCard);
