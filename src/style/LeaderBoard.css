@@ -1,0 +1,73 @@
+.LeaderBoard {
+    width: fit-content;
+    margin: auto;
+}
+
+.LeaderBoardCard {
+    width: 450px;
+    display: grid;
+    position: relative;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 33.9% 33% 33%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 1px solid #09f;
+}
+
+.lbc-profile-picture {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 4;
+}
+
+.lbc-user-name {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.lbc-label-top {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.lbc-label-bottom {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.lbc-score-container {
+    border: 1px solid #09f;
+    margin-left: 5px;
+    margin-right: 5px;
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 4;
+}
+
+.lbc-score-header {
+    text-align: center;
+    background-color: #09f;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.lbc-amount {
+    float: right;
+}
+
+.lbc-total-score {
+    height: calc(100% - 28px);
+    font-size: 15pt;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

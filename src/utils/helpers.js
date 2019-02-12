@@ -1,7 +1,7 @@
-export function formatQuestionCard({ id, author, optionOne }, { avatarURL }) {
+export function formatQuestionCard({ id, optionOne }, { name, avatarURL }) {
     return {
         id,
-        author,
+        author: name,
         optionOne,
         avatarURL,
     }

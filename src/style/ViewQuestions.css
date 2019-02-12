@@ -1,9 +1,14 @@
 table {
+	overflow: hidden;
 	margin: auto;
 	border-spacing: 0;
 	border: 1px solid #aaa;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
+}
+
+td {
+	padding: 10px;
 }
 
 th {

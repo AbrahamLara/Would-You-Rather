@@ -15,6 +15,7 @@
 }
 
 .custom-options-group {
+  overflow: hidden;
   position: absolute;
   top: 45px;
   left: -1px;
@@ -26,6 +27,7 @@
 
 .custom-option {
   display: flex;
+  background-color: white;
   align-items: center;
   padding-top: 5px;
   padding-bottom: 5px;

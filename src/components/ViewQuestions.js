@@ -41,7 +41,13 @@ class ViewQuestions extends Component {
 						</tr>
 					</thead>
 					<tbody>
-						{ids.map((id) => (<QuestionCard key={id} id={id}/>))}
+						{ids.map((id) => (
+							<tr>
+								<td colSpan='2'>
+									<QuestionCard key={id} id={id}/>
+								</td>
+							</tr>
+						))}
 					</tbody>
 				</table>
 			</div>
