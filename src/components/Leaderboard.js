@@ -1,26 +1,26 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
-import '../style/LeaderBoard.css'
+import '../style/LeaderBoard.css';
+import LeaderBoardCard from './LeaderBoardCard';
+import { connect } from 'react-redux';
+import { formatLeaderBoardCard } from '../utils/helpers';
 
 class LeaderBoard extends Component {
 	render () {
+		const { users } = this.props;
 		return (
 			<div className='LeaderBoard'>
-				<div className='LeaderBoardCard'>
-					<img className='lbc-profile-picture' width='100px' src={logo} />
-					<strong className='lbc-user-name'>Full Name</strong>
-					<div className='lbc-label-top'>Answered Questions: <span className='lbc-amount'>5</span></div>
-					<div className='lbc-label-bottom'>Unanswered Questions: <span className='lbc-amount'>3</span></div>
-					<div className='lbc-score-container'>
-						<div className='lbc-score-header'>Score</div>
-						<div className='lbc-total-score'>
-							8
-						</div>
-					</div>
-				</div>
+				{users.map((user, i) => <LeaderBoardCard key={user.id} user={user} rank={i+1}/>)}
 			</div>
 		);
 	}
 }
 
-export default LeaderBoard;
+function mapStateToProps ({ users }) {
+	return {
+		users: Object.keys(users)
+		.map((id) => formatLeaderBoardCard(users[id]))
+		.sort((a, b) => b.score - a.score),
+	}
+}
+
+export default connect(mapStateToProps)(LeaderBoard);
