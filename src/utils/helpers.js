@@ -18,6 +18,15 @@ export function formatLeaderBoardCard ({ id, name, answers, questions, avatarURL
     }
 }
 
+export function formatUnansweredQuestion ({ optionOne, optionTwo }, { name, avatarURL}) {
+    return {
+        name,
+        avatarURL,
+        optionOneText: optionOne.text,
+        optionTwoText: optionTwo.text,
+    }
+}
+
 export function objlen (obj) {
     return Object.keys(obj).length;
 }

@@ -45,6 +45,10 @@ strong {
 }
 
 .btn-view-poll {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
 	border: 1px solid #09f;
 	color: #09f;
 	border-radius: 5px;

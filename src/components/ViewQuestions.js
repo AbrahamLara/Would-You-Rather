@@ -56,7 +56,9 @@ class ViewQuestions extends Component {
 }
 
 function mapStateToProps ({ authedUser, questions, users }) {
-	const ids = Object.keys(questions);
+	const ids = Object.keys(questions)
+		.sort((a, b) => questions[b].timestamp - questions[a].timestamp);
+	
 	return {
 		answered: ids.filter((id) => id in users[authedUser].answers),
 		unanswered: ids.filter((id) => !(id in users[authedUser].answers)),

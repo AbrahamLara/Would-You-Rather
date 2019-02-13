@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import '../style/QuestionCard.css';
+import { Link } from 'react-router-dom';
 import { formatQuestionCard } from '../utils/helpers';
 
 class QuestionCard extends Component {
@@ -17,7 +18,9 @@ class QuestionCard extends Component {
 					</div>
 					<strong>Would you rather</strong>
 					<div className='short-text'>{optionOne.text}</div>
-					<button className='btn btn-view-poll'>View Poll</button>
+					<Link to={`/question/${id}`} className='btn btn-view-poll'>
+						View Poll
+					</Link>
 				</div>
 			</div>
 		);
