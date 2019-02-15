@@ -1,9 +1,5 @@
-.container {
+.app-container {
   margin-top: 1em;
-}
-
-.rm-mg {
-  margin: unset;
 }
 
 .btn {
