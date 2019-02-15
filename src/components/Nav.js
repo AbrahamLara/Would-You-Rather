@@ -9,10 +9,6 @@ class Nav extends Component {
 		showDropdown: '',
 	}
 
-	componentDidMount() {
-		console.log('hello');
-	}
-
 	logoutUser = () => {
 		this.props.dispatch(setAuthedUser(''));
 		this.toggleNav();

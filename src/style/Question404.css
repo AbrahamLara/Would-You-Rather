@@ -1,0 +1,20 @@
+.Question404 {
+    width: 450px;
+    font-size: 35px;
+    margin: auto;
+}
+
+.q404-id {
+    font-weight: 600;
+    font-style: italic;
+}
+
+.q404-header, .q404-text, .q404-id {
+    display: block;
+}
+
+@media screen and (max-width: 480px) {
+    .Question404 {
+        width: calc(100% - 10px);
+    }
+}

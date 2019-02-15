@@ -5,6 +5,7 @@ import '../style/QuestionPage.css';
 import { handleAddAnswer } from '../actions/questions';
 import Question from './Questions';
 import AnsweredQuestion from './AnsweredQuestion';
+import Question404 from './Question404';
 
 class QuestionPage extends Component {
 	handleSubmit = (e, id) => {
@@ -16,7 +17,11 @@ class QuestionPage extends Component {
 	}
 
 	render () {
-		const { answered, question } = this.props;
+		const { answered, question, id } = this.props;
+
+		if (!question) {
+			return <Question404 id={id}/>
+		}
 
 		return (
 			<div className='QuestionPage'>
@@ -33,9 +38,16 @@ class QuestionPage extends Component {
 }
 
 function mapStateToProps ({ authedUser, questions, users, }, { match, }) {
-	const id = match.params.id;
+	const id = match.params.id
+
+	if (!(id in questions)) {
+		return {
+			id,
+		};
+	}
+
 	const answered = id in users[authedUser].answers;
-	console.log(answered);
+
 	return {
 		answered,
 		question: answered ? formatAnsweredQuestion(users[authedUser], questions[id], users)
