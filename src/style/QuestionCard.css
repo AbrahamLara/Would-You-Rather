@@ -1,23 +1,25 @@
 .QuestionCard {
-	width: 450px;
-	border: 1px solid gray;
+	width: 100%;
+	border: 1px solid #aaa;
 	border-radius: 5px;
+	overflow: hidden;
 }
 
-.questioncard-header {
+.qc-header {
 	border-bottom: 1px solid gray;
 	padding: 10px;
 	font-weight: bold;
+	background-color: lightgray;
 }
 
-.questioncard-info {
+.qc-info {
 	display: grid;
 	padding: 10px;
 	grid-template-columns: 33.9% 33% 33%;
 	grid-template-rows: 33.9% 33% 33%;
 }
 
-.questioncard-profile-image-container {
+.qc-profile-image-container {
 	display: flex;
 	justify-content: center;
 	border-right: 1px solid lightgrey;
@@ -29,34 +31,34 @@
 	grid-row-end: 4;
 }
 
-.questioncard-profile-image {
+.qc-profile-image {
 	width: 70%;
 }
 
-.questioncard-posed-label {
+.qc-posed-label {
 	grid-column-start: 2;
 	grid-column-end: 4;
 	grid-row-start: 1;
 }
 
-.questioncard-rm-mg {
+.qc-rm-mg {
 	margin: unset;
 }
 
-.questioncard-text {
+.qc-text {
 	grid-column-start: 2;
 	grid-column-end: 4;
 	grid-row-start: 2;
 }
 
-.questioncard-short-text {
+.qc-short-text {
 	text-overflow: ellipsis;
 	max-width: 124px;
 	overflow: hidden;
 	white-space: nowrap;
 }
 
-.questioncard-btn-view-poll {
+.qc-btn-view-poll {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -69,13 +71,7 @@
 	grid-row-start: 3;
 }
 
-.questioncard-btn-view-poll:hover {
+.qc-btn-view-poll:hover {
 	background-color: #09f;
 	color: white;
-}
-
-@media (max-width: 991px) {
-	.QuestionCard {
-		width: 380px;
-	}
 }

@@ -1,4 +1,10 @@
 .QuestionPage {
     margin: auto;
-    width: fit-content;
+    width: 450px;
+}
+
+@media screen and (max-width: 480px) {
+    .QuestionPage {
+        width: calc(100% - 10px);
+    }
 }

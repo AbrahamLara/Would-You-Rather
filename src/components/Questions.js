@@ -40,33 +40,35 @@ class Question extends Component {
 				</div>
 				<div className='question-bottom-container'>
 					<img className='question-author-avatar' alt='profile-pic' src={avatarURL} />
-					<strong className='question-subheader'>Would you rather:</strong>
-					<div className='question-option-one'>
-						<input
-							className='question-option'
-							type='radio'
-							value={'optionOne'}
-							checked={o1Selected}
-							onChange={this.toggleOption1}
-						/> { optionOneText }
+					<div className='question-left-sub-container'>
+						<div className='question-btm-mg question-subheader'>Would you rather:</div>
+						<div className='question-btm-mg question-option-one'>
+							<input
+								className='question-option'
+								type='radio'
+								value={'optionOne'}
+								checked={o1Selected}
+								onChange={this.toggleOption1}
+							/> { optionOneText }
+						</div>
+						<div className='question-or-separator'>or</div>
+						<div className='question-btm-mg question-option-two'>
+							<input
+								className='question-option'
+								type='radio'
+								value={'optionTwo'}
+								checked={o2Selected}
+								onChange={this.toggleOption2}
+							/> { optionTwoText }
+						</div>
+						<button
+							className='btn question-submit-answer-btn'
+							onClick={onSubmit}
+							value={selection}
+						>
+							Submit
+						</button>
 					</div>
-					<span className='question-or-separator'>or</span>
-					<div className='question-option-two'>
-						<input
-							className='question-option'
-							type='radio'
-							value={'optionTwo'}
-							checked={o2Selected}
-							onChange={this.toggleOption2}
-						/> { optionTwoText }
-					</div>
-					<button
-						className='btn question-submit-answer-btn'
-						onClick={onSubmit}
-						value={selection}
-					>
-						Submit
-					</button>
 				</div>
 			</div>
 		);

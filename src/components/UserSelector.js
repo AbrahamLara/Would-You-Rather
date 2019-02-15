@@ -27,22 +27,22 @@ class Selector extends Component {
 		const { users } = this.props;
 
 		return (
-			<div className="custom-select">
+			<div className="UserSelector">
 				<button
-					className={"btn custom-select-display"+(value ? ' text-black' : '')}
+					className={"btn us-dropdown-button"+(value ? ' us-text-black' : '')}
 					onClick={this.handleToggle}
 				>
 					{value || 'Select a user'}
 				</button>
-				<div className={"custom-options-group"+(toggled ? '' : ' hidden')}>
+				<div className={"us-options-group"+(toggled ? '' : ' us-hidden')}>
 					{Object.keys(users).map((k, i) => (
-						<div key={k+i} className="custom-option" onClick={() => this.handleClick(users[k].name, k)}>
+						<div key={k+i} className="us-option" onClick={() => this.handleClick(users[k].name, k)}>
 							<img
-								className="user-image"
+								className="us-option-user-image"
 								alt="profile-pic"
 								src={users[k].avatarURL}
 							/>
-							<span className="user-name">{users[k].name}</span>
+							<span className="us-option-user-name">{users[k].name}</span>
 						</div>
 					))}
 				</div>

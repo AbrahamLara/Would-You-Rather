@@ -48,23 +48,23 @@ class NewQuestion extends Component {
 
 		return (
 			<div className='NewQuestion'>
-				<div className='form-header'><strong>Would You Rather:</strong></div>
-				<form>
+				<div className='nq-form-header'><strong>Would You Rather:</strong></div>
+				<form className='nq-form'>
 					<input
-						className='form-input form-item'
+						className='nq-form-input nq-form-item'
 						placeholder='Type Option One here'
 						value={optionOne}
 						onChange={this.updateFieldOne}
 					/>
-					<div className='center-text'>or</div>
+					<div className='nq-center-text'>or</div>
 					<input
-						className='form-input form-item'
+						className='nq-form-input nq-form-item'
 						placeholder='Type Option Two here'
 						value={optionTwo}
 						onChange={this.updateFieldTwo}
 					/>
 					<button
-						className='btn btn-submit form-item'
+						className='btn nq-btn-submit nq-form-item'
 						onClick={this.handleSubmit}
 					>
 						Submit	

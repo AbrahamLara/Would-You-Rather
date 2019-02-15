@@ -16,29 +16,29 @@ class AnsweredQuestion extends Component {
 
 		return (
 			<div className='AnsweredQuestion'>
-			<div className='answered-question-header'>
-				<strong className='answered-question-author-name'>Asked by { name }:</strong>
+			<div className='aq-header'>
+				<strong className='aq-author-name'>Asked by { name }:</strong>
 			</div>
-			<div className='answered-question-bottom-container'>
-				<img className='answered-question-author-avatar' alt='profile-pic' src={avatarURL} />
-				<div className='answered-question-left-sub-container'>
-					<strong className='answered-question-subheader'>Would you rather:</strong>
-					<div className={'answered-question-option btm-mg'}>
-						{answer === 'optionOne' && <div className='answered-question-option-selected'>
-							Your vote
+			<div className='aq-bottom-container'>
+				<img className='aq-author-avatar' alt='profile-pic' src={avatarURL} />
+				<div className='aq-left-sub-container'>
+					<strong className='aq-subheader'>Would you rather:</strong>
+					<div className='aq-option'>
+						{answer === 'optionOne' && <div className='aq-option-selected'>
+							&#10004;
 						</div>}
-						<span className='answered-question-option-text'>{ optionOneText }</span>
-						<label className='answered-question-option-votes'>
+						<span className='aq-option-text'>{ optionOneText }</span>
+						<label className='aq-option-votes'>
 							votes: { optionOneVotes } / { optionOneVotes + optionTwoVotes }
 						</label>
 						<ProgressBar value={optionOneVotes} max={optionOneVotes + optionTwoVotes} />
 					</div>
-					<div className='answered-question-option'>
-						{answer === 'optionTwo' && <div className='answered-question-option-selected'>
-							Your vote
+					<div className='aq-option'>
+						{answer === 'optionTwo' && <div className='aq-option-selected'>
+						&#10004;
 						</div>}
-						<span className='answered-question-option-text'>{ optionTwoText }</span>
-						<label className='answered-question-option-votes'>
+						<span className='aq-option-text'>{ optionTwoText }</span>
+						<label className='aq-option-votes'>
 							votes: { optionTwoVotes } / { optionOneVotes + optionTwoVotes }
 						</label>
 						<ProgressBar value={optionTwoVotes} max={optionOneVotes + optionTwoVotes} />

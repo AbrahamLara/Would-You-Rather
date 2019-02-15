@@ -23,27 +23,27 @@ class ViewQuestions extends Component {
 
 		return (
 			<div className="ViewQuestions">
-				<table>
-					<thead className='header-container'>
-						<tr>
+				<table className="vq-table">
+					<thead className='vq-header-container'>
+						<tr className='vq-tr'>
 							<th
-								className={selected ? 'selected' : ''}
+								className={'vq-th'+(selected ? ' vq-selected' : '' )}
 								onClick={() => this.changeViewTo('unanswered')}
 							>
 								Unanswered Questions
 							</th>
 							<th
-								className={'left-border'+(selected ? '' : ' selected')}
+								className={'vq-th vq-left-border'+(selected ? '' : ' vq-selected')}
 								onClick={() => this.changeViewTo('answered')}
 							>
 								Answered Questions
 							</th>
 						</tr>
 					</thead>
-					<tbody>
+					<tbody className='vq-tbody'>
 						{ids.map((id) => (
-							<tr key={id}>
-								<td colSpan='2'>
+							<tr className='vq-tr' key={id}>
+								<td className='vq-td' colSpan='2'>
 									<QuestionCard id={id}/>
 								</td>
 							</tr>

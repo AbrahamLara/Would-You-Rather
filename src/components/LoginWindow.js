@@ -19,11 +19,11 @@ class LoginWindow extends Component {
 
 	render () {
 		return (
-			<div className="login-window">
-				<div className="title">Login window</div>
+			<div className="LoginWindow">
+				<div className="lw-title">Login window</div>
 				<Selector onSelect={this.setUser}/>
 				<button
-					className="btn btn-login"
+					className="btn lw-btn-login"
 					onClick={this.authUser}
 				>
 					Login

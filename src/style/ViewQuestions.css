@@ -1,4 +1,4 @@
-table {
+.vq-table {
 	overflow: hidden;
 	margin: auto;
 	border-spacing: 0;
@@ -7,26 +7,32 @@ table {
 	border-top-right-radius: 5px;
 }
 
-td {
+.vq-td {
 	padding: 10px;
 }
 
-th {
+.vq-th {
 	width: 50%;
 	padding: 10px;
 	cursor: pointer;
 	border-bottom: 1px solid #aaa;
 }
 
-.left-border {
+.vq-left-border {
 	border-left: 1px solid #aaa;
 }
 
-.hidden {
+.vq-hidden {
 	display: none;
 }
 
-.selected {
+.vq-selected {
 	cursor: default;
 	background-color: #ddd;
+}
+
+@media screen and (max-width: 480px) {
+	.vq-table {
+		width: calc(100% - 10px);
+	}
 }

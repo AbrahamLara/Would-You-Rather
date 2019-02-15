@@ -1,10 +1,10 @@
-.custom-select {
+.UserSelector {
   position: relative;
   border: 1px solid gray;
   border-radius: 5px;
 }
 
-.custom-select-display {
+.us-dropdown-button {
   border-radius: 5px;
   color: gray;
   cursor: pointer;
@@ -14,7 +14,7 @@
   outline: none;
 }
 
-.custom-options-group {
+.us-options-group {
   overflow: hidden;
   position: absolute;
   top: 45px;
@@ -25,7 +25,7 @@
   width: 100%;
 }
 
-.custom-option {
+.us-option {
   display: flex;
   background-color: white;
   align-items: center;
@@ -34,15 +34,25 @@
   padding-left: 10px;
 }
 
-.custom-option:hover {
+.us-option:hover {
   background-color: lightgray;
   cursor: pointer;
 }
 
-.hidden {
+.us-option-user-image {
+	width: 60px;
+	border-radius: 30px;
+}
+
+.us-option-user-name {
+	font-size: 1.2em;
+	margin-left: 10px;
+}
+
+.us-hidden {
   display: none;
 }
 
-.text-black {
+.us-text-black {
   color: black;
 }
