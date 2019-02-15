@@ -20,10 +20,13 @@ class AnsweredQuestion extends Component {
 				<strong className='answered-question-author-name'>Asked by { name }:</strong>
 			</div>
 			<div className='answered-question-bottom-container'>
-				<img className='answered-question-author-avatar' src={avatarURL} />
+				<img className='answered-question-author-avatar' alt='profile-pic' src={avatarURL} />
 				<div className='answered-question-left-sub-container'>
 					<strong className='answered-question-subheader'>Would you rather:</strong>
-					<div className='answered-question-option btm-mg'>
+					<div className={'answered-question-option btm-mg'}>
+						{answer === 'optionOne' && <div className='answered-question-option-selected'>
+							Your vote
+						</div>}
 						<span className='answered-question-option-text'>{ optionOneText }</span>
 						<label className='answered-question-option-votes'>
 							votes: { optionOneVotes } / { optionOneVotes + optionTwoVotes }
@@ -31,6 +34,9 @@ class AnsweredQuestion extends Component {
 						<ProgressBar value={optionOneVotes} max={optionOneVotes + optionTwoVotes} />
 					</div>
 					<div className='answered-question-option'>
+						{answer === 'optionTwo' && <div className='answered-question-option-selected'>
+							Your vote
+						</div>}
 						<span className='answered-question-option-text'>{ optionTwoText }</span>
 						<label className='answered-question-option-votes'>
 							votes: { optionTwoVotes } / { optionOneVotes + optionTwoVotes }

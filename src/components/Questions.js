@@ -39,7 +39,7 @@ class Question extends Component {
 					<strong className='question-author-name'>{ name } asks:</strong>
 				</div>
 				<div className='question-bottom-container'>
-					<img className='question-author-avatar' src={avatarURL} />
+					<img className='question-author-avatar' alt='profile-pic' src={avatarURL} />
 					<strong className='question-subheader'>Would you rather:</strong>
 					<div className='question-option-one'>
 						<input

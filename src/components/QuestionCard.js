@@ -14,7 +14,7 @@ class QuestionCard extends Component {
 				</div>
 				<div className='card-info'>
 					<div className='profile-image-container'>
-						<img className='profile-image' src={avatarURL} />
+						<img className='profile-image' alt='profile-pic' src={avatarURL} />
 					</div>
 					<strong>Would you rather</strong>
 					<div className='short-text'>{optionOne.text}</div>
