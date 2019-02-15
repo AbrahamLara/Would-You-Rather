@@ -1,5 +1,6 @@
 export const RECEIVE_USERS = 'RECIEVE_USERS';
 export const ADD_TO_QUESTIONS = 'ADD_TO_QUESTIONS';
+export const ADD_TO_ANSWERS = 'ADD_TO_ANSWERS';
 
 export function receiveUsers (users) {
     return {
@@ -12,5 +13,12 @@ export function addToQuestions (question) {
     return {
         type: ADD_TO_QUESTIONS,
         question,
+    }
+}
+
+export function addToAnswers(answer) {
+    return {
+        type: ADD_TO_ANSWERS,
+        answer,
     }
 }

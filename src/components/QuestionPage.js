@@ -1,82 +1,45 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { formatUnansweredQuestion } from '../utils/helpers';
+import { formatQuestion, formatAnsweredQuestion } from '../utils/helpers';
 import '../style/QuestionPage.css';
+import { handleAddAnswer } from '../actions/questions';
+import Question from './Questions';
+import AnsweredQuestion from './AnsweredQuestion';
 
 class QuestionPage extends Component {
-	state = {
-		o1Selected: false,
-		o2Selected: false,
-		selection: -1,
-	}
+	handleSubmit = (e, id) => {
+		const answer = e.target.value;
 
-	toggleOption1 = (e) => {
-		let selection = e.target.value;
-
-		this.setState((currState) => ({
-			selection,
-			o1Selected: !currState.o1Selected,
-			o2Selected: false,
-		}));
-	}
-
-	toggleOption2 = (e) => {
-		let selection = e.target.value;
-
-		this.setState((currState) => ({
-			selection,
-			o1Selected: false,
-			o2Selected: !currState.o2Selected,
-		}));
+		if (answer) {
+			this.props.dispatch(handleAddAnswer({ answer, id, }));
+		}
 	}
 
 	render () {
-		const { o1Selected, o2Selected } = this.state;
-		const { authedUser, question } = this.props;
-		const { name, avatarURL, optionOneText, optionTwoText } = question;
+		const { answered, question } = this.props;
 
 		return (
 			<div className='QuestionPage'>
-					<div className='Question'>
-						<div className='question-header'>
-							<strong className='question-author-name'>{ name } asks:</strong>
-						</div>
-						<div className='question-bottom-container'>
-							<img className='question-author-avatar' src={avatarURL} />
-							<strong className='question-subheader'>Would you rather:</strong>
-							<div className='question-option-one'>
-								<input
-									className='question-option'
-									type='radio'
-									value={0}
-									checked={o1Selected}
-									onChange={this.toggleOption1}
-								/> { optionOneText }
-							</div>
-							<span className='question-or-separator'>or</span>
-							<div className='question-option-two'>
-								<input
-									className='question-option'
-									type='radio'
-									value={1}
-									checked={o2Selected}
-									onChange={this.toggleOption2}
-								/> { optionTwoText }
-							</div>
-							<button className='btn question-submit-answer-btn'>Submit</button>
-						</div>
-					</div>
+				{answered ?
+					<AnsweredQuestion question={question} />
+					: <Question
+							question={question}
+							onSubmit={(e) => this.handleSubmit(e, question.id)}
+						/>
+				}
 			</div>
 		);
 	}
 }
 
-function mapStateToProps ({ authedUser, questions, users }, { match, }) {
-	const question = questions[match.params.id];
-
+function mapStateToProps ({ authedUser, questions, users, }, { match, }) {
+	const id = match.params.id;
+	const answered = id in users[authedUser].answers;
+	console.log(answered);
 	return {
-		question: formatUnansweredQuestion(question, users[question.author]),
-		authedUser,
+		answered,
+		question: answered ? formatAnsweredQuestion(users[authedUser], questions[id], users)
+		: formatQuestion(questions[id], users),
 	}
 }
 

@@ -13,7 +13,7 @@ export function questions (state = {}, action) {
 				[action.question.id]: action.question,
 			};
 		case ADD_ANSWER:
-			const { authedUser, qid, answer} = action;
+			const { authedUser, qid, answer } = action;
 
 			return {
 				...state,
