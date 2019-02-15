@@ -28,10 +28,10 @@ class App extends Component {
             {loading === true ?
               null
               : <div className='container'>
-                  <Route path='/' exact component={authedUser ===  '' ? LoginWindow : ViewQuestions}/>
-                  <Route path='/add' component={authedUser ===  '' ? LoginWindow : NewQuestion}/>
-                  <Route path='/leaderboard' component={authedUser ===  '' ? LoginWindow : LeaderBoard}/>
-                  <Route path='/question/:id' component={authedUser ===  '' ? LoginWindow : QuestionPage}/>
+                  <Route path='/' exact component={!authedUser ? LoginWindow : ViewQuestions}/>
+                  <Route path='/add' component={!authedUser ? LoginWindow : NewQuestion}/>
+                  <Route path='/leaderboard' component={!authedUser ? LoginWindow : LeaderBoard}/>
+                  <Route path='/question/:id' component={!authedUser ? LoginWindow : QuestionPage}/>
                 </div>
             }
           </div>
@@ -40,6 +40,8 @@ class App extends Component {
     );
   }
 }
+
+
 
 function mapStateToProps ({ authedUser }) {
   return {

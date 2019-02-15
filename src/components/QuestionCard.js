@@ -9,16 +9,16 @@ class QuestionCard extends Component {
 		const { id, author, optionOne, avatarURL } = this.props.question;
 		return (
 			<div className='QuestionCard'>
-				<div className='header'>
-					{author} asks:
+				<div className='questioncard-header'>
+					Asked by {author}:
 				</div>
-				<div className='card-info'>
-					<div className='profile-image-container'>
-						<img className='profile-image' alt='profile-pic' src={avatarURL} />
+				<div className='questioncard-info'>
+					<div className='questioncard-profile-image-container'>
+						<img className='questioncard-profile-image' alt='profile-pic' src={avatarURL} />
 					</div>
-					<strong>Would you rather</strong>
-					<div className='short-text'>{optionOne.text}</div>
-					<Link to={`/question/${id}`} className='btn btn-view-poll'>
+					<strong className='questioncard-posed-label'>Would you rather</strong>
+					<div className='questioncard-short-text'>{optionOne.text}</div>
+					<Link to={`/question/${id}`} className='btn questioncard-btn-view-poll'>
 						View Poll
 					</Link>
 				</div>

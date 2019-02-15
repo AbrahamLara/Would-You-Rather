@@ -1,18 +1,27 @@
 .QuestionCard {
-	width: 380px;
+	width: 450px;
+	border: 1px solid gray;
+	border-radius: 5px;
 }
 
-.card-info {
+.questioncard-header {
+	border-bottom: 1px solid gray;
+	padding: 10px;
+	font-weight: bold;
+}
+
+.questioncard-info {
 	display: grid;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding: 10px;
 	grid-template-columns: 33.9% 33% 33%;
 	grid-template-rows: 33.9% 33% 33%;
 }
 
-.profile-image-container {
+.questioncard-profile-image-container {
 	display: flex;
 	justify-content: center;
+	border-right: 1px solid lightgrey;
+	margin-right: 10px;
 	align-items: center;
 	flex-flow: row;
 	grid-column-start: 1;
@@ -20,31 +29,34 @@
 	grid-row-end: 4;
 }
 
-.profile-image {
+.questioncard-profile-image {
 	width: 70%;
 }
 
-strong {
+.questioncard-posed-label {
 	grid-column-start: 2;
 	grid-column-end: 4;
 	grid-row-start: 1;
 }
 
-.rm-mg {
+.questioncard-rm-mg {
 	margin: unset;
 }
 
-.short-text {
-	text-overflow: ellipsis;
-	max-width: 124px;
-	overflow: hidden;
-	white-space: nowrap;
+.questioncard-text {
 	grid-column-start: 2;
 	grid-column-end: 4;
 	grid-row-start: 2;
 }
 
-.btn-view-poll {
+.questioncard-short-text {
+	text-overflow: ellipsis;
+	max-width: 124px;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.questioncard-btn-view-poll {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -57,7 +69,13 @@ strong {
 	grid-row-start: 3;
 }
 
-.btn-view-poll:hover {
+.questioncard-btn-view-poll:hover {
 	background-color: #09f;
 	color: white;
+}
+
+@media (max-width: 991px) {
+	.QuestionCard {
+		width: 380px;
+	}
 }
