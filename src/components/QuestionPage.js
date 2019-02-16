@@ -10,7 +10,7 @@ import Question404 from './Question404';
 class QuestionPage extends Component {
 	// Upon clicking 'submit' the handleAddAnswer
 	// function is dispatched with the answer the user
-	// selected and teh question id
+	// selected and the question id
 	handleSubmit = (e, id) => {
 		const answer = e.target.value;
 

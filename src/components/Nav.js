@@ -10,7 +10,7 @@ class Nav extends Component {
 	}
 
 	// Upon clicking 'logout' setAuthedUser
-	// action is dispatched with an emoty
+	// action is dispatched with an empty
 	// string to update state with no
 	// authenticated user
 	logoutUser = () => {

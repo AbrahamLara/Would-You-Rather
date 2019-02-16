@@ -1,5 +1,7 @@
 import React from 'react';
 import '../style/LeaderBoardCard.css';
+import { connect } from 'react-redux';
+import { formatLeaderBoardCard } from '../utils/helpers';
 
 function LeaderBoardCard (props) {
 	const { name, answered, created, avatarURL, score, } = props.user;
@@ -25,4 +27,10 @@ function LeaderBoardCard (props) {
 	);
 }
 
-export default LeaderBoardCard;
+function mapStateToProps ({ users }, { id }) {
+	return {
+		user: formatLeaderBoardCard(users[id]),
+	}
+}
+
+export default connect(mapStateToProps)(LeaderBoardCard);

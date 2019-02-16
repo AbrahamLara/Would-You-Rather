@@ -14,7 +14,7 @@ import QuestionPage from './QuestionPage';
 class App extends Component {
   // After mounting, the component will
   // retrieve all users, all questions, and
-  // authedUse from src/utils/_DATA.js
+  // authedUser from src/utils/_DATA.js
   componentDidMount () {
     this.props.dispatch(handleInitialData());
   }

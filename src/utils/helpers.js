@@ -1,4 +1,4 @@
-// Function that return neceessary values
+// Function that return necessary values
 // from given question and user objects
 // to display on QuestionCard component
 export function formatQuestionCard ({ id, optionOne, }, { name, avatarURL, }) {
@@ -10,7 +10,7 @@ export function formatQuestionCard ({ id, optionOne, }, { name, avatarURL, }) {
     };
 }
 
-// Function that return neceessary values
+// Function that return necessary values
 // from given user object to display on
 // LeaderBoardCard component
 export function formatLeaderBoardCard ({ id, name, answers, questions, avatarURL, }) {
@@ -20,11 +20,11 @@ export function formatLeaderBoardCard ({ id, name, answers, questions, avatarURL
         avatarURL,
         answered: objlen(answers),
         created: questions.length,
-        score: objlen(answers) + questions.length,
+        score: getUserScore({answers, questions}),
     };
 }
 
-// Function that return neceessary values
+// Function that return necessary values
 // from given question and users object to display on
 // Question component
 export function formatQuestion ({ id,  author, optionOne, optionTwo, }, users) {
@@ -39,7 +39,7 @@ export function formatQuestion ({ id,  author, optionOne, optionTwo, }, users) {
     };
 }
 
-// Function that return neceessary values
+// Function that return necessary values
 // from given user, question, and users object to display on
 // AnsweredQuestion component
 export function formatAnsweredQuestion (user, question, users) {
@@ -49,6 +49,13 @@ export function formatAnsweredQuestion (user, question, users) {
         optionTwoVotes: question.optionTwo.votes.length,
         answer: user.answers[question.id],
     };
+}
+
+// Function that adds the amount of questions the user has
+// answered and amount of questions they have created to
+// determine their score
+export function getUserScore({ answers, questions }) {
+    return objlen(answers) + questions.length;
 }
 
 function objlen (obj) {

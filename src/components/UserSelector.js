@@ -15,7 +15,7 @@ class Selector extends Component {
 		}));
 	}
 
-	// Upon clicking an option the componen state
+	// Upon clicking an option the component state
 	// is updated with the name of selected
 	// user
 	handleClick = (value, id) => {

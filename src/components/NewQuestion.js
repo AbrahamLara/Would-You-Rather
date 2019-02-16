@@ -11,17 +11,11 @@ class NewQuestion extends Component {
 		toHome: false,
 	}
 
-	// These functions are for updating component state
+	// This function is for updating component state
 	// with input values as the user types
-	updateFieldOne = (e) => {
+	updateField = (e, option) => {
 		this.setState({
-			optionOne: e.target.value,
-		});
-	}
-
-	updateFieldTwo = (e) => {
-		this.setState({
-			optionTwo: e.target.value,
+			[option]: e.target.value,
 		});
 	}
 
@@ -59,14 +53,14 @@ class NewQuestion extends Component {
 						className='nq-form-input nq-form-item'
 						placeholder='Type Option One here'
 						value={optionOne}
-						onChange={this.updateFieldOne}
+						onChange={(e) => this.updateField(e, 'optionOne')}
 					/>
 					<div className='nq-center-text'>or</div>
 					<input
 						className='nq-form-input nq-form-item'
 						placeholder='Type Option Two here'
 						value={optionTwo}
-						onChange={this.updateFieldTwo}
+						onChange={(e) => this.updateField(e, 'optionTwo')}
 					/>
 					<button
 						className='btn nq-btn-submit nq-form-item'
