@@ -29,7 +29,7 @@ class Nav extends Component {
 
 	render () {
 		const { authedUser, users } = this.props
-		console.log(authedUser);
+		
 		return (
 			<nav className='Nav'>
 				<div className='nav-mobile'>

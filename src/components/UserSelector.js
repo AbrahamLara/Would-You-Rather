@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './../style/UserSelector.css';
 import { connect } from 'react-redux';
 
-class Selector extends Component {
+class UserSelector extends Component {
 	state = {
 		toggled: false,
 	}
@@ -63,4 +63,4 @@ function mapStateToProps ({ users }) {
 	}
 }
 
-export default connect(mapStateToProps)(Selector);
+export default connect(mapStateToProps)(UserSelector);
