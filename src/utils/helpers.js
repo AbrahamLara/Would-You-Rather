@@ -1,3 +1,6 @@
+// Function that return neceessary values
+// from given question and user objects
+// to display on QuestionCard component
 export function formatQuestionCard ({ id, optionOne, }, { name, avatarURL, }) {
     return {
         id,
@@ -7,6 +10,9 @@ export function formatQuestionCard ({ id, optionOne, }, { name, avatarURL, }) {
     };
 }
 
+// Function that return neceessary values
+// from given user object to display on
+// LeaderBoardCard component
 export function formatLeaderBoardCard ({ id, name, answers, questions, avatarURL, }) {
     return {
         id,
@@ -18,6 +24,9 @@ export function formatLeaderBoardCard ({ id, name, answers, questions, avatarURL
     };
 }
 
+// Function that return neceessary values
+// from given question and users object to display on
+// Question component
 export function formatQuestion ({ id,  author, optionOne, optionTwo, }, users) {
     const { name, avatarURL, } = users[author];
 
@@ -30,6 +39,9 @@ export function formatQuestion ({ id,  author, optionOne, optionTwo, }, users) {
     };
 }
 
+// Function that return neceessary values
+// from given user, question, and users object to display on
+// AnsweredQuestion component
 export function formatAnsweredQuestion (user, question, users) {
     return {
         ...formatQuestion(question, users),
@@ -39,6 +51,6 @@ export function formatAnsweredQuestion (user, question, users) {
     };
 }
 
-export function objlen (obj) {
+function objlen (obj) {
     return Object.keys(obj).length;
 }

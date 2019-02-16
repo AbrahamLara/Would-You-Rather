@@ -1,6 +1,9 @@
 import React from 'react';
 import '../style/Question404.css';
 
+// When visiting a question page with an invalid
+// id that belongs to no existing question this component
+// should be displayed
 function Question404 (props) {
     return (
         <div className='Question404'>

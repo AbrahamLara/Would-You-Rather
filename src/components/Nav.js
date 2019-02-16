@@ -9,11 +9,18 @@ class Nav extends Component {
 		showDropdown: '',
 	}
 
+	// Upon clicking 'logout' setAuthedUser
+	// action is dispatched with an emoty
+	// string to update state with no
+	// authenticated user
 	logoutUser = () => {
 		this.props.dispatch(setAuthedUser(''));
 		this.toggleNav();
 	}
 
+	// This function is for mobile responsiveness
+	// to display drowpdown menu in navbar
+	// when viewing web app in protrait mode
 	toggleNav = () => {
 		this.setState((currState) => ({
 			showDropdown: currState.showDropdown ? '' : 'show',
@@ -22,12 +29,12 @@ class Nav extends Component {
 
 	render () {
 		const { authedUser, users } = this.props
-		
+		console.log(authedUser);
 		return (
 			<nav className='Nav'>
 				<div className='nav-mobile'>
 					<button onClick={this.toggleNav} className='btn'>&#10006;</button>
-					<strong>{authedUser in users ? users[authedUser].name : 'Would You Rather'}</strong>
+					<strong>{authedUser ? users[authedUser].name : 'Would You Rather'}</strong>
 				</div>
 				<ul className={'nav-menu '+(this.state.showDropdown && 'nav-menu-show')}>
 					<li className='nav-menu-item'>
@@ -68,6 +75,8 @@ class Nav extends Component {
 	}
 }
 
+// Gets authedUser and users so that the authenticated
+// user's name can be displayed
 function mapStateToProps ({ authedUser, users }) {
 	return {
 		authedUser,

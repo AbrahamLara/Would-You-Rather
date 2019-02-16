@@ -7,12 +7,17 @@ class Selector extends Component {
 		toggled: false,
 	}
 
+	// Updates component state
+	// with name of selected user
 	handleToggle = () => {
 		this.setState((currState) => ({
 			toggled: !currState.toggled,
 		}));
 	}
 
+	// Upon clicking an option the componen state
+	// is updated with the name of selected
+	// user
 	handleClick = (value, id) => {
 		this.props.onSelect(id);
 
@@ -51,9 +56,9 @@ class Selector extends Component {
 	}
 }
 
-function mapStateToProps ({ authedUser, users }) {
+// Gets users from state to display in selector
+function mapStateToProps ({ users }) {
 	return {
-		authedUser,
 		users,
 	}
 }

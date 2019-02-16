@@ -5,6 +5,9 @@ import {
     _saveQuestionAnswer
 } from "./_DATA";
 
+// function returning promise for
+// asychronous fetching of data
+// from _DATA.js
 export function getInitialData () {
     return Promise.all([
         _getUsers(),

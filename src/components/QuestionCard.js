@@ -27,6 +27,10 @@ class QuestionCard extends Component {
 	}
 }
 
+// Using id passed in through component props
+// will retrieve a specific question from state
+// and return a new question formated to accomadate
+// what will be displayed in the QuestionCard component
 function mapStateToProps ({ questions, users }, { id }) {
 	const question = questions[id];
 

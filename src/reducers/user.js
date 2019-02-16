@@ -1,5 +1,7 @@
 import { RECEIVE_USERS, ADD_TO_QUESTIONS, ADD_TO_ANSWERS, } from "../actions/users";
 
+// users reducer to determine which action event
+// will update state
 export default function users (state = {}, action) {
 	switch (action.type) {
 		case RECEIVE_USERS:

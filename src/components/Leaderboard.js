@@ -15,6 +15,9 @@ class LeaderBoard extends Component {
 	}
 }
 
+// Gets users from state to get keys from objcet
+// so that it may return a sorted array of objects
+// containing information for their leaderboard ranking
 function mapStateToProps ({ users }) {
 	return {
 		users: Object.keys(users)

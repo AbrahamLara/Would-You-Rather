@@ -8,6 +8,9 @@ class Question extends Component {
 		selection: '',
 	}
 
+	// These two functions update component
+	// state to give effect of switching
+	// between radio buttons
 	toggleOption1 = (e) => {
 		let selection = e.target.value;
 
@@ -28,6 +31,8 @@ class Question extends Component {
 		}));
 	}
 
+	// The submit button calls a function
+	// That is passed through component's prop
 	render() {
 		const { o1Selected, o2Selected, selection } = this.state;
 		const { question, onSubmit } = this.props;

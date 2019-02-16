@@ -7,15 +7,20 @@ import './../style/App.css';
 import Nav from './Nav';
 import LoginWindow from './LoginWindow';
 import NewQuestion from './NewQuestion';
-import LeaderBoard from './Leaderboard';
+import LeaderBoard from './LeaderBoard';
 import ViewQuestions from './ViewQuestions';
 import QuestionPage from './QuestionPage';
 
 class App extends Component {
+  // After mounting, the component will
+  // retrieve all users, all questions, and
+  // authedUse from src/utils/_DATA.js
   componentDidMount () {
     this.props.dispatch(handleInitialData());
   }
 
+  // If there is no authenticated user then
+  // the Route component will render the LoginWindow
   render() {
     const { loading, authedUser } = this.props;
 
@@ -25,7 +30,7 @@ class App extends Component {
           <LoadingBar />
           <div className="App">
             <Nav />
-            {loading === true ?
+            {loading ?
               null
               : <div className='app-container'>
                   <Route path='/' exact component={!authedUser ? LoginWindow : ViewQuestions}/>
@@ -41,8 +46,9 @@ class App extends Component {
   }
 }
 
-
-
+// Gets authedUser from state in order for Route
+// components to render correct view and if there is
+// no authenticated user while loading show no view
 function mapStateToProps ({ authedUser }) {
   return {
     authedUser,

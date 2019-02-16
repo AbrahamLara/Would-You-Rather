@@ -8,6 +8,9 @@ import AnsweredQuestion from './AnsweredQuestion';
 import Question404 from './Question404';
 
 class QuestionPage extends Component {
+	// Upon clicking 'submit' the handleAddAnswer
+	// function is dispatched with the answer the user
+	// selected and teh question id
 	handleSubmit = (e, id) => {
 		const answer = e.target.value;
 
@@ -37,6 +40,11 @@ class QuestionPage extends Component {
 	}
 }
 
+// Gets auhthenticated user, questions, and users from state
+// and id of question from the url params to determine whether
+// or not there is a question that exists with the given id
+// to know whether to render a custom 404 page or the actual
+// question
 function mapStateToProps ({ authedUser, questions, users, }, { match, }) {
 	const id = match.params.id
 

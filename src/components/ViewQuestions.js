@@ -8,6 +8,8 @@ class ViewQuestions extends Component {
 		view: 'unanswered',
 	}
 
+	// Updates component state to display
+	// selected view
 	changeViewTo = (view) => {
 		if (view !== this.state.view){
 			this.setState({
@@ -55,6 +57,9 @@ class ViewQuestions extends Component {
 	}
 }
 
+// Using authedUser retrieves their answered and unaswered questions
+// from questions and users state to display authenticated user's
+// answered and unaswered questions
 function mapStateToProps ({ authedUser, questions, users }) {
 	const ids = Object.keys(questions)
 		.sort((a, b) => questions[b].timestamp - questions[a].timestamp);

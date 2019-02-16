@@ -11,6 +11,11 @@ class LoginWindow extends Component {
 		this.setState({ id, });
 	}
 
+	// Once the user clicks 'login'
+	// the setAuthedUser action is dispatched
+	// with the selected user id
+	// to update state and set an authenticated
+	// user 
 	authUser = () => {
 		const { id } = this.state;
 		if (id)

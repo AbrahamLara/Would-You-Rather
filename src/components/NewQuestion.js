@@ -11,6 +11,8 @@ class NewQuestion extends Component {
 		toHome: false,
 	}
 
+	// These functions are for updating component state
+	// with input values as the user types
 	updateFieldOne = (e) => {
 		this.setState({
 			optionOne: e.target.value,
@@ -23,6 +25,9 @@ class NewQuestion extends Component {
 		});
 	}
 
+	// Upon clicking 'submit' the handleAddQuestion
+	// function is dispatched in order update state
+	// with newly created question
 	handleSubmit = (e) => {
 		e.preventDefault();
 		
