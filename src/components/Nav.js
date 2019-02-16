@@ -29,12 +29,12 @@ class Nav extends Component {
 
 	render () {
 		const { authedUser, users } = this.props
-		console.log(authedUser);
+
 		return (
 			<nav className='Nav'>
 				<div className='nav-mobile'>
 					<button onClick={this.toggleNav} className='btn'>&#10006;</button>
-					<strong>{authedUser ? users[authedUser].name : 'Would You Rather'}</strong>
+					<strong className='nav-sub-menu-label'>{authedUser ? users[authedUser].name : 'Would You Rather'}</strong>
 				</div>
 				<ul className={'nav-menu '+(this.state.showDropdown && 'nav-menu-show')}>
 					<li className='nav-menu-item'>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Selector from './UserSelector';
+import UserSelector from './UserSelector';
 import '../style/LoginWindow.css';
 import { connect } from 'react-redux';
 import { setAuthedUser } from '../actions/authedUser';
@@ -26,7 +26,7 @@ class LoginWindow extends Component {
 		return (
 			<div className="LoginWindow">
 				<div className="lw-title">Login window</div>
-				<Selector onSelect={this.setUser}/>
+				<UserSelector onSelect={this.setUser}/>
 				<button
 					className="btn lw-btn-login"
 					onClick={this.authUser}
