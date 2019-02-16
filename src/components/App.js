@@ -7,7 +7,7 @@ import './../style/App.css';
 import Nav from './Nav';
 import LoginWindow from './LoginWindow';
 import NewQuestion from './NewQuestion';
-import LeaderBoard from './LeaderBoard2';
+import LeaderBoard from './LeaderBoard';
 import ViewQuestions from './ViewQuestions';
 import QuestionPage from './QuestionPage';
 
