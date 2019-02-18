@@ -11,5 +11,7 @@ The provided dataset contains data on existing users and questions that this web
 
 ## How to Setup
 
-* install all project dependencies with `npm install`
-* start the development server with `npm start` or `yarn start`
+* clone repo: `git clone https://github.com/AbrahamLara/Would-You-Rather.git`
+* go into project directory: `cd Would-You-Rather/`
+* install all project dependencies: `npm install`
+* start the development server: `npm start` or `yarn start`
